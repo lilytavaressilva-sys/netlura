@@ -1,0 +1,166 @@
+body {
+    background: #141414; /* Define a cor de fundo da página */
+    color: #fff; /* Define a cor do texto principal */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Define a fonte usada no site */
+    margin: 0; /* Remove a margem padrão do body */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos toda a altura da tela */
+}
+
+main {
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    min-height: 100vh; /* Garante altura mínima de 100% da tela */
+}
+
+h1 {
+    font-size: 2.5rem; /* Define o tamanho da fonte do título */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    justify-self: center; /* Centraliza o título dentro do main */
+}
+
+section[aria-label="Perfis disponíveis"] {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Limita a largura máxima */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza os perfis */
+}
+
+nav.profiles {
+    display: flex; /* Usa flexbox para os perfis */
+    gap: 2rem; /* Espaço entre os perfis */
+    justify-content: center; /* Centraliza os perfis horizontalmente */
+}
+
+.profile {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #fff; /* Cor do texto dos links */
+    transition: transform 0.2s, box-shadow 0.2s; /* Suaviza animações de transformação e sombra */
+}
+
+figure {
+    margin: 0; /* Remove margem padrão */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    align-items: center; /* Centraliza itens */
+}
+
+img {
+    width: 120px; /* Largura fixa da imagem */
+    height: 120px; /* Altura fixa da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+    object-fit: cover; /* Mantém proporção da imagem */
+    margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+    background: #222; /* Cor de fundo da imagem */
+    display: block; /* Exibe como bloco */
+    border: 2px solid transparent; /* Borda inicial invisível */
+}
+
+img:hover {
+    border: 2px solid #fff; /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+    font-size: 1.1rem; /* Tamanho da fonte da legenda */
+    font-weight: 500; /* Peso da fonte */
+    margin-top: 0.5rem; /* Espaço acima da legenda */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+ul {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0; /* Remove padding padrão */
+    margin: 0; /* Remove margem padrão */
+    display: flex; /* Usa flexbox para os itens da lista */
+    gap: 3rem; /* Espaço entre os itens da lista */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
+    justify-content: center; /* Centraliza os itens da lista horizontalmente */
+}
+
+button#themeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    border: 1px solid #fff;
+    color: #222;
+    background: #fff;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 600;;
+}
+
+button#themeToggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.light-theme {
+    background: #f0f0f0;
+    color: #111;
+}
+
+.light-theme button#themeToggle {
+    border-color: #111;
+    color: #ddd;
+    background: #111
+}
+
+.light-theme button#themeToggle:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .profile {
+    color: #111;
+}
+
+.light-theme img {
+    background: #ddd;
+}
+
+.light-theme img:hover {
+    border: 2px solid #111; /* Borda branca ao passar o mouse */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho do título para tablets */
+    }
+
+    img {
+        width: 100px; /* Reduz a largura da imagem */
+        height: 100px; /* Reduz a altura da imagem */
+    }
+
+    nav.profiles {
+        gap: 1.5rem; /* Reduz o espaço entre perfis */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho do título para mobile */
+        margin-bottom: 1.5rem; /* Ajusta o espaço abaixo */
+    }
+
+    img {
+        width: 80px; /* Reduz a largura da imagem para mobile */
+        height: 80px; /* Reduz a altura da imagem para mobile */
+    }
+
+    nav.profiles {
+        gap: 1rem; /* Reduz o espaço entre perfis para mobile */
+        flex-wrap: wrap; /* Permite que os perfis quebrem para a próxima linha se necessário */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    figcaption {
+        font-size: 1rem; /* Reduz o tamanho da fonte da legenda */
+    }
+}
